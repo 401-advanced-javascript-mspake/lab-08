@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "lint": "eslint **/*.js",
     "test": "jest --verbose",
     "test-watch": "jest --watchAll --verbose"
   },

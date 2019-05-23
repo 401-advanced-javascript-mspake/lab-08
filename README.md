@@ -5,43 +5,55 @@
   
 ### Author: Morgana Spake  
   
-<!-- ### Links and Resources  
-* [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
-
-#### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
-
-### Modules
-#### `modulename.js`
-##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
-
+### Links and Resources  
+* [submission PR](https://github.com/401-advanced-javascript-mspake/lab-08/pull/1)  
+* [travis](https://www.travis-ci.com/401-advanced-javascript-mspake/lab-08)  
+  
+### Modules  
+#### `categories.js, categories-schema.js, products.js, products-schema.js`  
+##### Exported Values and Methods  
+  
+###### `Category -> instance of the Category class`  
+Returns an instance of the category class with get, post, put, and delete methods  
+  
+###### `Product -> instance of the Product class`  
+Returns an instance of the product class with get, post, put, and delete methods  
+  
+###### `category-schema -> mongoose Schema instance`  
+Returns a mongoose (mongodb) schema.  
+  
+###### `products-schema -> mongoose Schema instance`  
+Returns a mongoose (mongodb) schema.  
+  
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
-
-#### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+* `PORT` - Port Number (i.e: 3000)  
+* `MONGODB_URI` - URL to the running mongo instance/db  
   
-#### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
+#### Running the app  
+* `npm install`  
+* `node start`  
+  
+**Endpoints:**  
+* /categories  
+* /categories  
+* /categories/:id  
+* /categories/:id  
+* /categories/:id  
 
-#### UML
-Link to an image of the UML for your application and response to events -->
+* /products  
+* /products  
+* /products/:id  
+* /products/:id  
+* /products/:id  
+  
+#### Tests  
+* How do you run tests?  
+  * `npm test`  
+* What assertions were made?  
+  * posting returns the object posted, getting returns an array, updating returns the updated object, deleting returns an empty array, getting updating or deleting to an invalid id returns an error.   
+* What assertions need to be / should be made?  
+  * posting an invalid entry.  
+  
+#### UML  
+![uml]
