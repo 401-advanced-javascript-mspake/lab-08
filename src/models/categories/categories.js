@@ -1,7 +1,6 @@
 'use strict';
 
 const uuid = require('uuid/v4');
-
 const schema = require('./categories-schema.js');
 
 class Categories {
@@ -26,7 +25,6 @@ class Categories {
   delete(_id) {
     return schema.findByIdAndDelete(_id);
   }
-
 }
 
 module.exports = Categories;

@@ -1,6 +1,6 @@
 'use strict';
 
-const Product = require('../src/models/categories/products/products.js');
+const Product = require('../src/models/products/products.js');
 
 const supergoose = require('./supergoose.js');
 

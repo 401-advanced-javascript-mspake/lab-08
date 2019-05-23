@@ -1,6 +1,6 @@
 'use strict';
 
-const Category = require('../src/models/categories/categories/categories.js');
+const Category = require('../src/models/categories/categories.js');
 
 const supergoose = require('./supergoose.js');
 
