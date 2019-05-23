@@ -10,9 +10,7 @@ class Categories {
   }
 
   get(_id) {
-    console.log(_id);
     let entry = _id ? {_id} : _id;
-    console.log(entry);
     return schema.find(entry); 
   }
   
@@ -21,12 +19,12 @@ class Categories {
     return toAdd.save();
   }
 
-  put(id, entry) {
-    return schema.findByIdAndUpdate(id, entry, {new:true});
+  put(_id, entry) {
+    return schema.findByIdAndUpdate(_id, entry, {new:true});
   }
 
-  delete(id) {
-    return schema.findByIdAndDelete(id);
+  delete(_id) {
+    return schema.findByIdAndDelete(_id);
   }
 
 }

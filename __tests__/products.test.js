@@ -1,14 +1,14 @@
 'use strict';
 
-const Category = require('../src/models/categories/categories/categories.js');
+const Product = require('../src/models/categories/products/products.js');
 
 const supergoose = require('./supergoose.js');
 
 beforeAll(supergoose.startDB);
 afterAll(supergoose.stopDB);
 
-describe('Category data model', () => {
-  const category = new Category;
+describe('Product data model', () => {
+  const product = new Product;
 
   const testEntry = {
     name: 'Test',
@@ -22,14 +22,14 @@ describe('Category data model', () => {
 
   let retrievedEntry;
 
-  it('should be an instance of the Category class', () => {
-    expect(category).toBeInstanceOf(Category);
+  it('should be an instance of the Product class', () => {
+    expect(product).toBeInstanceOf(Product);
   });
 
   
   describe('it has a post method', () => {
     it('given a valid entry, posting returns the newly made entry', () => {
-      return category.post(testEntry)
+      return product.post(testEntry)
         .then(result => {
           expect(result.name === testEntry.name).toBeTruthy();
         });
@@ -40,7 +40,7 @@ describe('Category data model', () => {
   describe('it has a get method', () => {
 
     it('getting should return an array', () => {
-      return category.get().then( result => {
+      return product.get().then( result => {
         retrievedEntry = result[0];
         expect(result).toBeInstanceOf(Array);
         expect(result[0]).toHaveProperty('name');
@@ -49,14 +49,13 @@ describe('Category data model', () => {
     });
     
     it('get can return a single entry by id', () => {
-      return category.get(retrievedEntry._id).then( result => {
-        console.log(retrievedEntry._id);
+      return product.get(retrievedEntry._id).then( result => {
         expect(result[0].name).toEqual(testEntry.name);
       });
     });
 
     it('getting an id that doesn\'t exist returns an error', () => {
-      return category.put(12740851, updateInfo).then()
+      return product.put(12740851, updateInfo).then()
         .catch(err => {
           expect(err).toBeDefined();
         });
@@ -66,13 +65,13 @@ describe('Category data model', () => {
 
   describe('it has a put method', () => {
     it('given a valid id, it updates the information if an entry', () => {
-      return category.put(retrievedEntry._id, updateInfo).then( result => {
+      return product.put(retrievedEntry._id, updateInfo).then( result => {
         expect(result.name).toEqual(updateInfo.name);
       });
     });
 
     it('updating an id that doesn\'t exist returns an error', () => {
-      return category.put(12740851, updateInfo).then()
+      return product.put(12740851, updateInfo).then()
         .catch(err => {
           expect(err).toBeDefined();
         });
@@ -81,13 +80,13 @@ describe('Category data model', () => {
 
   describe('it has a delete method', () => {
     it('given a valid id, it will delete the entry at that id', () => {
-      return category.delete(retrievedEntry._id).then( result => {
+      return product.delete(retrievedEntry._id).then( result => {
         expect(result.name).toEqual(updateInfo.name);
       });
     });
 
     it('getting the deleted entry returns an empty array', () => {
-      return category.get(retrievedEntry._id).then(result => {
+      return product.get(retrievedEntry._id).then(result => {
         expect(result[0]).toBeFalsy();
       });
     });
