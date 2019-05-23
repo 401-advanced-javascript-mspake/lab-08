@@ -10,10 +10,10 @@ const errorHandler = require( './middleware/error.js');
 const notFound = require( './middleware/404.js' );
 
 // Models
-const Products = require('./models/products.js');
+const Products = require('./models/products/products.js');
 const products = new Products();
 
-const Categories = require('./models/categories.js');
+const Categories = require('./models/categories/categories.js');
 const categories = new Categories();
 
 // Prepare the express app
