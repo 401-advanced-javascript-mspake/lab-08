@@ -56,4 +56,4 @@ Returns a mongoose (mongodb) schema.
   * posting an invalid entry.  
   
 #### UML  
-![uml]
+![uml](https://github.com/401-advanced-javascript-mspake/lab-08/blob/data-model-construction-and-testing/assets/20190522_133955.jpg)  
